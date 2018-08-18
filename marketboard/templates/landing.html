@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FFXIV Syndicate</title>
+</head>
+<body>
+<h1>FFXIV Syndicate</h1>
+{% for server in server_list %}
+    <a href="{% url 'home' server %}">{{ server }}</a>
+{% endfor %}
+</body>
+</html>

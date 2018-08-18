@@ -14,8 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from marketboard import urls as marketboard_urls
+from marketboard import views as marketboard_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('marketboard/', include(marketboard_urls)),
+    path('', marketboard_views.landing, name='landing'),
 ]
