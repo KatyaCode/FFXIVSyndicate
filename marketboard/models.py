@@ -4,7 +4,7 @@ from django.db import models
 from model_utils.models import TimeStampedModel
 from model_utils import Choices
 
-SERVER_LIST = Choices(
+SERVER_LIST = [
     'Aegis',
     'Atomos',
     'Carbuncle',
@@ -71,7 +71,9 @@ SERVER_LIST = Choices(
     'Ragnarok',
     'Shiva',
     'Zodiark',
-)
+]
+
+SERVER_TUPLES = Choices(*SERVER_LIST)
 
 
 class Transaction(TimeStampedModel):
@@ -83,5 +85,5 @@ class Transaction(TimeStampedModel):
     buyer = models.CharField(max_length=21)
     server = models.CharField(
         max_length=12,
-        choices=SERVER_LIST
+        choices=SERVER_TUPLES
     )

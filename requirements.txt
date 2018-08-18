@@ -1,3 +1,4 @@
+factory_boy
 Django==2.1
 django-dotenv==1.4.2
 django-model-utils==3.1.2
