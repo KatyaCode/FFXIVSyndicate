@@ -44,3 +44,7 @@ class HomePageTest(TestCase):
         transaction = TransactionFactory(server='Ultros')
         response = self.client.get('/marketboard/Ultros')
         self.assertContains(response, transaction)
+
+    def test_server_name_passed_to_template(self):
+        response = self.client.get('/marketboard/Ultros')
+        self.assertContains(response, 'Ultros')

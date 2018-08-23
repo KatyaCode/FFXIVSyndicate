@@ -87,3 +87,9 @@ class Transaction(TimeStampedModel):
         max_length=12,
         choices=SERVER_TUPLES
     )
+
+    def __repr__(self):
+        return f'Transaction item:{self.item_id}'
+
+    def __str__(self):
+        return str(self.item_id)

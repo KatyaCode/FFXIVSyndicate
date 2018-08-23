@@ -64,7 +64,7 @@ class NewVisitorTest(StaticLiveServerTestCase):
                                             self.browser.find_element_by_tag_name('h1').text))
 
         # He sees a list of recent item transactions specific to the Ultros server
-        recent_transactions = self.browser.find_element_by_id('recentTransactions')
+        recent_transactions = self.browser.find_element_by_id('recentTransactions').text
         self.assertIn('111', recent_transactions)
         self.assertNotIn('404', recent_transactions)
 

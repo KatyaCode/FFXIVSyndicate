@@ -5,9 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-{% for transaction in recent_transactions %}
-<p>{{ transaction }}</p>
-{% empty %}
-{% endfor %}
+<h1>{{ server }}</h1>
+<table id="recentTransactions">
+    {% for transaction in recent_transactions %}
+        <tr>
+            <td>{{ transaction }}</td>
+        </tr>
+    {% empty %}
+    {% endfor %}
+</table>
 </body>
 </html>
