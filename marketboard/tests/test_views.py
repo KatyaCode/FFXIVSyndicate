@@ -48,3 +48,11 @@ class HomePageTest(TestCase):
     def test_server_name_passed_to_template(self):
         response = self.client.get('/marketboard/Ultros')
         self.assertContains(response, 'Ultros')
+
+
+class ItemDetailViewTest(TestCase):
+
+    def test_detail_view_passes_matching_transactions_to_template(self):
+        transaction = TransactionFactory(item_id=111, server='Ultros')
+        response = self.client.get('/marketboard/Ultros/item/111')
+        self.assertContains(response, transaction)

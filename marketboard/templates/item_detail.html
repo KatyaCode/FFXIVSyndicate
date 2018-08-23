@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction history for {{ item }}</title>
+</head>
+<body>
+<table id="recentTransactions">
+    {% for transaction in recent_transactions %}
+        <tr>
+            <td>{{ transaction }}</td>
+        </tr>
+    {% empty %}
+    {% endfor %}
+</table>
+</body>
+</html>
