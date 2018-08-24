@@ -9,7 +9,8 @@
 <table id="recentTransactions">
     {% for transaction in recent_transactions %}
         <tr>
-            <td>{{ transaction }}</td>
+            <td><a href="{% url 'item_details' server_name=server item_id=transaction.item_id %}">{{ transaction }}</a>
+            </td>
         </tr>
     {% empty %}
     {% endfor %}

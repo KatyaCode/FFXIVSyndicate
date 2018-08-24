@@ -16,9 +16,6 @@ class TransactionFactory(factory.django.DjangoModelFactory):
     quantity = FuzzyInteger(1, 99)
     quality = Faker('pybool')
     price = FuzzyInteger(1, 100000)
-    transaction_time = FuzzyDateTime(
-        timezone.now() - timedelta(days=29),
-        timezone.now()
-    )
+    transaction_time = timezone.now()
     buyer = Faker('name')
     server = FuzzyChoice(SERVER_LIST)
